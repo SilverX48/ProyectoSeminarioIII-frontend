@@ -6,9 +6,6 @@ import ReservacionesComponents from "../Components/ReservacionesComponent";
 
 import NavComponent from "../Components/NavComponent";
 
-
-
-
 export default function Reservaciones(){
     const dispatch = useDispatch();
     const reservacionesState = useSelector(state => state.getAllReservacionesReducers);
@@ -20,27 +17,27 @@ export default function Reservaciones(){
     <div>
         <NavComponent />
             <div>
-                {loading ? (<h1>Cargando...</h1>): error ? (<h1>Algo esta sucediendo aqui...?</h1>):(
-                    <table className="table table-hover">
-                        <tr>
-                            <th>Identidad</th>
-                            <th>Nombre Paciente</th>
-                            <th>Fecha</th>
-                            <th>Descripcion</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        {
-                            reservaciones.map((reservacion)=>{
-                            return <ReservacionesComponents key={reservacion._id} reservaciones={reservacion}/>})
-                        }
-
-                    </table>
-
-                )}
-                
                 <a href="/reservacionesadd">Agregar Reservaciones</a>
-                 
+                {loading ? (<h1>Cargando...</h1>): error ? (<h1>Algo esta sucediendo aqui...?</h1>):(
+                    <table className="table table-stripped table-dark">
+                        <thead>
+                            <tr>
+                                <th>Identidad</th>
+                                <th>Nombre Paciente</th>
+                                <th>Fecha</th>
+                                <th>Descripcion</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                reservaciones.map((reservacion)=>{
+                                return <ReservacionesComponents key={reservacion._id} reservaciones={reservacion}/>})
+                            }
+                        </tbody>
+                    </table>
+                )} 
             </div>
         </div>
         

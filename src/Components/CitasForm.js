@@ -29,56 +29,81 @@ export default function CitasForm(){
     }
 
     return(
-        <div>
-            <input
-            type='text'
-            placeholder="Identidad"
-            className="input"
-            required
-            value={identidad}
-            onChange={(e) => { Setidentidad(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Nombre Paciente"
-            className="input"
-            required
-            value={nombre_paciente}
-            onChange={(e) => { Setnombre_paciente(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Doctor"
-            className="input"
-            required
-            value={doctor}
-            onChange={(e) => { Setdoctor(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Diagnostico"
-            className="input"
-            required
-            value={diagnostico}
-            onChange={(e) => { Setdiagnostico(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Precio"
-            className="input"
-            required
-            value={precio}
-            onChange={(e) => { Setprecio(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Fecha"
-            className="input"
-            required
-            value={fecha}
-            onChange={(e) => { Setfecha(e.target.value) }}
-            />
-            <button onClick={add}>Agregar</button>
+        <div className="formulario">
+            <h2>Registrar Cita</h2>
+            <div className="form-group">
+                <label>Identidad</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={identidad}
+                onChange={(e) => { Setidentidad(e.target.value) }}
+                />
+            </div>
+
+            <div className="form-group">
+                <label>Nombre de Paciente</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={nombre_paciente}
+                onChange={(e) => { Setnombre_paciente(e.target.value) }}
+                />
+            </div>
+
+            <div className="form-group">
+                <label>Nombre Doctor</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={doctor}
+                onChange={(e) => { Setdoctor(e.target.value) }}
+                />
+            </div>
+
+            <div className="form-group">
+                <label>Diagnostico</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={diagnostico}
+                onChange={(e) => { Setdiagnostico(e.target.value) }}
+                />
+            </div>
+
+            <div className="form-group">
+                <label>Precio</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={precio}
+                onChange={(e) => { Setprecio(e.target.value) }}
+                />
+            </div>
+
+            <div className="form-group">
+                <label>Fecha</label>
+                <input
+                type='date'
+                placeholder=""
+                className="form-control"
+                required
+                value={fecha}
+                onChange={(e) => { Setfecha(e.target.value) }}
+                />
+            </div>
+
+            <button  type='submit' className="btn btn-primary" onClick={add}>Agregar</button>
         </div>
     )
 }

@@ -20,11 +20,12 @@ export default function Citas(){
     <div>
         <NavComponent />
             <div>
+                <a href="/citasadd">Agregar Citas</a>
                 {loading ? (<h1>Cargando...</h1>): error ? (<h1>Algo esta sucediendo aqui...?</h1>):(
                     <table className="table table-stripped table-dark">
                         <thead>
                             <tr>
-                                <th scope="col">Identidad</th>
+                                <th>Identidad</th>
                                 <th>Nombre Paciente</th>
                                 <th>Doctor</th>
                                 <th>Diagnostico</th>
@@ -35,18 +36,13 @@ export default function Citas(){
                             </tr>
                         </thead>
                         <tbody>
-                            
                             {
                                 citas.map((cita)=>{
                                 return <CitasComponents key={cita._id} cita={cita}/>})
                             }
                         </tbody>
                     </table>
-
                 )}
-                
-                <a href="/citasadd">Agregar Citas</a>
-                 
             </div>
         </div>
         

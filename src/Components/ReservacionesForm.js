@@ -26,40 +26,57 @@ export default function ReservacionesForm(){
     }
 
     return(
-        <div>
-            <input
-            type='text'
-            placeholder="Identidad"
-            className="input"
-            required
-            value={identidad}
-            onChange={(e) => { Setidentidad(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Nombre Paciente"
-            className="input"
-            required
-            value={nombre_paciente}
-            onChange={(e) => { Setnombre_paciente(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Fecha"
-            className="input"
-            required
-            value={fecha}
-            onChange={(e) => { Setfecha(e.target.value) }}
-            />
-            <input
-            type='text'
-            placeholder="Descripcion"
-            className="input"
-            required
-            value={descripcion}
-            onChange={(e) => { Setdescripcion(e.target.value) }}
-            />
-            <button onClick={add}>Agregar</button>
+        <div className="formulario">
+            <h2>Registrar Reservación</h2>
+            <div className="form-group">
+                <label>Identidad</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={identidad}
+                onChange={(e) => { Setidentidad(e.target.value) }}
+                />
+            </div>
+
+            <div className="form-group">
+                <label>Nombre de Paciente</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={nombre_paciente}
+                onChange={(e) => { Setnombre_paciente(e.target.value) }}
+                />
+            </div>
+
+            <div className="form-group">
+                <label>Fecha</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={fecha}
+                onChange={(e) => { Setfecha(e.target.value) }}
+                />
+            </div>
+            
+            <div className="form-group">
+                <label>Descripcion</label>
+                <input
+                type='text'
+                placeholder=""
+                className="form-control"
+                required
+                value={descripcion}
+                onChange={(e) => { Setdescripcion(e.target.value) }}
+                />
+            </div>
+
+            <button type='submit' className="btn btn-primary" onClick={add}>Agregar</button>
         </div>
     )
 }
