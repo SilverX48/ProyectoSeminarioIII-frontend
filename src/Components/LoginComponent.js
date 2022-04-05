@@ -2,6 +2,9 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loginUsuarios } from "../actions/UsuariosActions";
 
+import '../styles/login.css'
+
+
 export default function LoginComponent(){
     const [user, Setuser] = useState('');
     const [password, Setpassword] = useState(''); 
@@ -26,15 +29,18 @@ export default function LoginComponent(){
     }
 
     return(
-        <div>
+        <div className="form_field">
+            <h2>Inicio de Sesion</h2>
+            <label>Usuario</label>
             <input
             type='text'
-            placeholder="Identidad"
+            placeholder="Usuario"
             className="input"
             required
             value={user}
             onChange={(e) => { Setuser(e.target.value) }}
             />
+            <label>Contraseña</label>
             <input
             type='password'
             placeholder="password"
@@ -43,7 +49,7 @@ export default function LoginComponent(){
             value={password}
             onChange={(e) => { Setpassword(e.target.value) }}
             />
-            <button onClick={login}>Ingresar</button>  
+            <button className="login_button" onClick={login}>Ingresar</button>  
         </div>
     )
 }
