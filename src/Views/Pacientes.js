@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux"
 
 
 import { getAllPacientes } from "../actions/PacientesActions"
-import { logoutUsuario } from "../actions/UsuariosActions";
+
+import NavComponent from "../Components/NavComponent";
 import PacientesComponents from "../Components/PacientesComponent";
 
 
@@ -15,18 +16,33 @@ export default function Pacientes(){
         dispatch(getAllPacientes());
     },[])
     return(
-        <div>
-            {loading ? (<h1>Cargando...</h1>): error ? (<h1>Algo esta sucediendo aqui...?</h1>):(
-                pacientes.map((paciente)=>{
-                    return <div key={paciente._id}>
-                        <div>
-                            <PacientesComponents paciente={paciente}/>
-                        </div>
-                    </div>
-                })
-            )}
-            <a href="/pacientesadd">Agregar Pacientes</a>
-            <a onClick={()=>{dispatch(logoutUsuario())}} className="btn">Salir</a> 
+    <div>
+        <NavComponent />
+            <div>
+                {loading ? (<h1>Cargando...</h1>): error ? (<h1>Algo esta sucediendo aqui...?</h1>):(
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Identidad</th>
+                            <th>Nombre Completo</th>
+                            <th>Telefono</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {
+                            pacientes.map((paciente)=>{
+                            return <PacientesComponents key={paciente._id} paciente={paciente}/>})
+                        }
+
+                    </table>
+
+                )}
+                
+                <a href="/pacientesadd">Agregar Pacientes</a>
+                 
+            </div>
         </div>
+        
     )
 }

@@ -1,10 +1,12 @@
 import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { postPacientes } from "../actions/PacientesActions"
+import { useNavigate } from "react-router-dom";
 
 
 export default function PacientesForm(){
     const dispatch = useDispatch();
+    const navigation = useNavigate();
 
     const [identidad, Setidentidad] = useState('');
     const [nombre_completo, Setnombre_completo] = useState('');
@@ -22,6 +24,7 @@ export default function PacientesForm(){
         }
         console.log(paciente);
         dispatch(postPacientes(paciente));
+        navigation('/pacientes');
     }
 
     return(

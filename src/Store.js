@@ -6,11 +6,20 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { getAllPacientesReducers, postPacientesReducers} from "./Reducers/PacientesReducers";
 import { loginUsuariosReducers } from "./Reducers/UsuariosReducers";
+import { getAllCitasReducers , postCitasReducers} from "./Reducers/CitasReducers";
+import { getAllReservacionesReducers, postReservacionesReducers} from "./Reducers/ReservacionesReducers";
+
+
+
 
 const finalReducer = combineReducers({
     getAllPacientesReducers: getAllPacientesReducers,
     postPacientesReducers: postPacientesReducers,
-    loginUsuariosReducers:loginUsuariosReducers
+    loginUsuariosReducers:loginUsuariosReducers,
+    getAllCitasReducers:getAllCitasReducers,
+    postCitasReducers:postCitasReducers,
+    getAllReservacionesReducers: getAllReservacionesReducers,
+    postReservacionesReducers:postReservacionesReducers
 })
 
 const usuario_actual=localStorage.getItem('usuario_actual') ? JSON.parse(localStorage.getItem('usuario_actual')):null

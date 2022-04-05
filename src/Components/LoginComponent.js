@@ -12,7 +12,7 @@ export default function LoginComponent(){
 
     useEffect(()=>{
         if(localStorage.getItem('usuario_actual')){
-            window.location.href='/pacientes'
+            window.location.href='/home'
         }
     })
 
