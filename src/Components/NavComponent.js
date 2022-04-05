@@ -7,7 +7,7 @@ export default function NavComponent (){
     return(
     <header className="header">
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <p className="navbar-brand m-0" href="">FARMASYSTEM</p>
+      <p className="navbar-brand m-0" href="">Welcome!</p>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

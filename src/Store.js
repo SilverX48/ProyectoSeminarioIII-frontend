@@ -4,8 +4,8 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { composeWithDevTools } from "redux-devtools-extension";
-import { getAllPacientesReducers, postPacientesReducers} from "./Reducers/PacientesReducers";
-import { loginUsuariosReducers } from "./Reducers/UsuariosReducers";
+import { getAllPacientesReducers, postPacientesReducers, updatePacientesReducers} from "./Reducers/PacientesReducers";
+import { loginUsuariosReducers, signinUsuariosReducers } from "./Reducers/UsuariosReducers";
 import { getAllCitasReducers , postCitasReducers} from "./Reducers/CitasReducers";
 import { getAllReservacionesReducers, postReservacionesReducers} from "./Reducers/ReservacionesReducers";
 
@@ -15,7 +15,9 @@ import { getAllReservacionesReducers, postReservacionesReducers} from "./Reducer
 const finalReducer = combineReducers({
     getAllPacientesReducers: getAllPacientesReducers,
     postPacientesReducers: postPacientesReducers,
+    updatePacientesReducers:updatePacientesReducers,
     loginUsuariosReducers:loginUsuariosReducers,
+    signinUsuariosReducers:signinUsuariosReducers,
     getAllCitasReducers:getAllCitasReducers,
     postCitasReducers:postCitasReducers,
     getAllReservacionesReducers: getAllReservacionesReducers,

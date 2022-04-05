@@ -1,0 +1,14 @@
+div .formulario{
+    margin: 0 auto;
+    width: 1000px;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+button{
+    margin: 10px;
+
+}

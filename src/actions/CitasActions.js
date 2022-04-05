@@ -20,3 +20,14 @@ export const postCitas = (cita) => async dispatch =>{
         dispatch({type: 'POST_CITAS_ERROR', payload:error});
     }
 }
+
+export const updateCitas = (paciente) => async dispatch =>{
+    dispatch({type:'PUT_PACIENTES_REQUEST'});
+    try {
+        const response = await axios.put(`http://localhost:3000/api/v1/citas/update/${paciente._id}`,paciente);
+        console.log(response);
+        dispatch({type: 'PUT_PACIENTES_SUCCESS', payload:response.data});
+    } catch (error) {
+        dispatch({type: 'PUT_PACIENTES_ERROR', payload:error});
+    }
+}

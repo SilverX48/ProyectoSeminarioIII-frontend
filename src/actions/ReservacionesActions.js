@@ -20,3 +20,14 @@ export const postReservaciones = (reservaciones) => async dispatch =>{
         dispatch({type: 'POST_RESERVACIONES_ERROR', payload:error});
     }
 }
+
+export const updateCitas = (paciente) => async dispatch =>{
+    dispatch({type:'PUT_RESERVACIONES_REQUEST'});
+    try {
+        const response = await axios.put(`http://localhost:3000/api/v1/reservaciones/update/${paciente._id}`,paciente);
+        console.log(response);
+        dispatch({type: 'PUT_RESERVACIONES_SUCCESS', payload:response.data});
+    } catch (error) {
+        dispatch({type: 'PUT_RESERVACIONES_ERROR', payload:error});
+    }
+}

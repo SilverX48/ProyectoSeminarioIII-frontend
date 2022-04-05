@@ -6,13 +6,19 @@ import { postCitas } from "../actions/CitasActions";
 
 export default function CitasForm(){
     const dispatch = useDispatch();
-    const navigation = useNavigate(); 
+    const navigation = useNavigate();
+    const [identidad, Setidentidad] = useState('');
+    const [nombre_paciente, Setnombre_paciente] = useState('');
+    const [doctor, Setdoctor] = useState('');
     const [diagnostico, Setdiagnostico] = useState('');
     const [precio, Setprecio] = useState('');
     const [fecha, Setfecha] = useState('');
 
     function add(){
         const cita ={
+            identidad, 
+            nombre_paciente, 
+            doctor,
             diagnostico,
             precio,
             fecha,
@@ -24,6 +30,30 @@ export default function CitasForm(){
 
     return(
         <div>
+            <input
+            type='text'
+            placeholder="Identidad"
+            className="input"
+            required
+            value={identidad}
+            onChange={(e) => { Setidentidad(e.target.value) }}
+            />
+            <input
+            type='text'
+            placeholder="Nombre Paciente"
+            className="input"
+            required
+            value={nombre_paciente}
+            onChange={(e) => { Setnombre_paciente(e.target.value) }}
+            />
+            <input
+            type='text'
+            placeholder="Doctor"
+            className="input"
+            required
+            value={doctor}
+            onChange={(e) => { Setdoctor(e.target.value) }}
+            />
             <input
             type='text'
             placeholder="Diagnostico"

@@ -23,6 +23,8 @@ export default function Reservaciones(){
                 {loading ? (<h1>Cargando...</h1>): error ? (<h1>Algo esta sucediendo aqui...?</h1>):(
                     <table className="table table-hover">
                         <tr>
+                            <th>Identidad</th>
+                            <th>Nombre Paciente</th>
                             <th>Fecha</th>
                             <th>Descripcion</th>
                             <th></th>

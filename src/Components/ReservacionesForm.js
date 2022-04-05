@@ -7,12 +7,16 @@ import { postReservaciones } from "../actions/ReservacionesActions";
 
 export default function ReservacionesForm(){
     const dispatch = useDispatch();
-    const navigation = useNavigate(); 
+    const navigation = useNavigate();
+    const [identidad, Setidentidad] = useState('');
+    const [nombre_paciente, Setnombre_paciente] = useState(''); 
     const [fecha, Setfecha] = useState('');
     const [descripcion, Setdescripcion] = useState('');
 
     function add(){
         const reservacion ={
+            identidad,
+            nombre_paciente,
             fecha,
             descripcion,
         }
@@ -23,6 +27,22 @@ export default function ReservacionesForm(){
 
     return(
         <div>
+            <input
+            type='text'
+            placeholder="Identidad"
+            className="input"
+            required
+            value={identidad}
+            onChange={(e) => { Setidentidad(e.target.value) }}
+            />
+            <input
+            type='text'
+            placeholder="Nombre Paciente"
+            className="input"
+            required
+            value={nombre_paciente}
+            onChange={(e) => { Setnombre_paciente(e.target.value) }}
+            />
             <input
             type='text'
             placeholder="Fecha"

@@ -1,11 +1,11 @@
 import NavComponent from "../Components/NavComponent";
 
 
-export default function Menu (){
+export default function Home (){
     return(
         <div >
             <NavComponent />
-            <h1>WELCOME TO FARMASYSTEM</h1>
+            <h1>BIENVENIDO!</h1>
         </div>
     )
 }

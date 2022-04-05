@@ -29,6 +29,8 @@ export default function PacientesForm(){
 
     return(
         <div>
+            <h2>Inicio de Sesion</h2>
+            <label>Identidad</label>
             <input
             type='text'
             placeholder="Identidad"
@@ -37,6 +39,7 @@ export default function PacientesForm(){
             value={identidad}
             onChange={(e) => { Setidentidad(e.target.value) }}
             />
+            <label>Nombre Completo</label>
             <input
             type='text'
             placeholder="Nombre Completo"
@@ -45,6 +48,7 @@ export default function PacientesForm(){
             value={nombre_completo}
             onChange={(e) => { Setnombre_completo(e.target.value) }}
             />
+            <label>Telefono</label>
             <input
             type='text'
             placeholder="Telefono"
@@ -53,6 +57,7 @@ export default function PacientesForm(){
             value={telefono}
             onChange={(e) => { Settelefono(e.target.value) }}
             />
+            <label>Fecha Nacimiento</label>
             <input
             type='text'
             placeholder="Fecha Nacimiento"
@@ -61,6 +66,7 @@ export default function PacientesForm(){
             value={fecha_nacimiento}
             onChange={(e) => { Setfecha_nacimiento(e.target.value) }}
             />
+            <label>Correo</label>
             <input
             type='text'
             placeholder="Email"

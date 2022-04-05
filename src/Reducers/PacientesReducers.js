@@ -35,3 +35,23 @@ export const postPacientesReducers =(state = {}, action )=> {
             return state
     }
 }
+
+
+export const updatePacientesReducers =(state = {}, action )=> {
+    switch (action.type) {
+        case 'PUT_PACIENTES_REQUEST': return {
+            loading:true,
+            ...state
+        }
+        case 'PUT_PACIENTES_SUCCESS': return {
+            loading:false,
+            pacientes: action.payload,
+        }
+        case 'PUT_PACIENTES_ERROR': return {
+            error: action.payload,
+            loading: false,
+        }
+        default:
+            return state
+    }
+}
