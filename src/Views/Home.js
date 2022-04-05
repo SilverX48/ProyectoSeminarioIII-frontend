@@ -1,5 +1,5 @@
 import NavComponent from "../Components/NavComponent";
-import doctor from './../../public/img/doc.jpg';
+import doctor from './../img/doc.jpg';
 
 export default function Home (){
     return(
